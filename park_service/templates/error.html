@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class="card"><h1>操作未完成 · {{ code }}</h1><p>{{ message }}</p><p>请返回原工单并刷新，确认当前身份、状态与版本后再操作。</p><a href="{{ url_for('tickets') }}">返回可见工单</a></section>{% endblock %}

@@ -1,0 +1,3 @@
+{% for key,label,limit in [('reporter_name','报修人',50),('reporter_contact','联系途径（可用演示分机）',100),('location','具体地点（支持公共区域）',200),('company_name','企业名称（可空）',100),('summary','摘要（可空）',200),('category','类别（可空）',50)] %}
+<label>{{ label }}<input name="{{ key }}" maxlength="{{ limit }}" value="{{ (ticket[key] or '') if ticket is defined else '' }}" {% if key in ['reporter_name','reporter_contact','location'] %}required{% endif %}></label>{% endfor %}
+<label>问题描述<textarea name="issue_description" maxlength="2000" required>{{ (ticket.issue_description or '') if ticket is defined else '' }}</textarea></label>
